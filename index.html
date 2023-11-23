@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Pollo Loco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/7_statusbars/3_icons/icon_salsa_bottle.png">
+    <script src="js/models/drawableObject.class.js"></script>
+    <script src="js/models/movable-object.class.js"></script>
+    <script src="js/models/collectable-objects.class.js"></script>
+    <script src="js/models/coin.class.js"></script>
+    <script src="js/models/throwable-object.class.js"></script>
+    <script src="js/models/bottle.class.js"></script>
+    <script src="js/models/character.class.js"></script>
+    <script src="js/models/chicken.class.js"></script>
+    <script src="js/models/small-chicken.class.js"></script>
+    <script src="js/models/statusbar-health.class.js"></script>
+    <script src="js/models/statusbar-endboss.class.js"></script>
+    <script src="js/models/statusbar-character.class.js"></script>
+    <script src="js/models/statusbar-coin.class.js"></script>
+    <script src="js/models/statusbar-bottle.class.js"></script>
+    <script src="js/models/world.class.js"></script>
+    <script src="js/models/background-object.class.js"></script>
+    <script src="js/models/clouds.class.js"></script>
+    <script src="js/models/game-over.class.js"></script>
+    <script src="js/models/game-win.class.js"></script>
+    <script src="js/models/keyboard.class.js"></script>
+    <script src="js/models/level.class.js"></script>
+    <script src="js/models/endboss.class.js"></script>
+    <script src="js/levels/level1.js"></script>
+    <script src="js/game.js"></script>
+</head>
+
+<body onload="drawStartscreen()">
+
+    <h1 translate="no" class="center-horizontally">El Pollo Loco</h1>
+
+    <div id="start-container">
+        <div id="start-btns-div">
+            <button class="btn" id="start-btn" onclick="startGame()">Start</button>
+            <button class="btn" id="show-controls-btn" onclick="showKeyControl()">Keys</button>
+        </div>
+        <canvas width="720" height="480" id="canvas-start"></canvas>
+    </div>
+    <div id="key-screen" class="d-none">
+        <img src="img/icons/close.svg" alt="Close" id="close-icon" onclick="closeKeyControl()">
+        <span><img src="img/icons/arrow-left.svg" alt=""> = GO LEFT</span>
+        <span><img src="img/icons/arrow-right.svg" alt=""> = GO RIGHT</span>
+        <span><img src="img/icons/arrow-bar-up.svg" alt=""> = JUMP</span>
+        <span>D <span class="slash">/</span><img src="img/6_salsa_bottle/salsa_bottle.png" alt="">= THROW
+            BOTTLE</span>
+    </div>
+    <div id="game-container" class="d-none">
+        <div class="control-btns-div" id="control-btns-div">
+            <div id="mute-button" class="control-btn" onclick="mute()"><img src="img/icons/volume-up-fill.svg"
+                    alt="mute" id="mute-icon"></div>
+            <div id="control-info-btn" class="control-btn" onclick="showKeyControl(), pauseGame()"><img
+                    src="img/icons/keyboard.svg" alt="key controls"></div>
+            <div id="pause-btn" class="control-btn" onclick="pauseGame()"><img src="img/icons/pause-btn.svg"
+                    id="pause-icon" alt="pause"></div>
+        </div>
+        <canvas width="720" height="480" id="canvas"></canvas>
+        <button id="restart-button" class="btn d-none" onclick="restartGame()">Spiel neu starten</button>
+        <div class="mobile-btns-div" id="mobile-btns-div">
+            <div class="mobile-left-right-div">
+                <div id="mobile-move-left" class="background-mobile-btns" ><img
+                        src="img/icons/arrow-left.svg" alt="left" class="mobile-icons"></div>
+                <div id="mobile-move-right" class="background-mobile-btns"><img
+                        src="img/icons/arrow-right.svg" alt="right" class="mobile-icons">
+                </div>
+            </div>
+            <div class="mobile-jump-throw-div">
+                <div id="mobile-jump" class="background-mobile-btns"><img
+                        src="img/icons/arrow-bar-up.svg" alt="jump" class="mobile-icons"></div>
+                <div id="mobile-throw" class="background-mobile-btns"> <img
+                        src="img/6_salsa_bottle/salsa_bottle.png" alt="throw" class="mobile-icons"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="turn-screen" class="d-none">
+        <span class="turning-txt">please turn your mobile device...</span>
+        <div class="img-div">
+            <img src="img/icons/phone.svg" alt="">
+            <img src="img/icons/arrow-clockwise.svg" alt="">
+            <img src="img/icons/phone-landscape.svg" alt="turn-screen">
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

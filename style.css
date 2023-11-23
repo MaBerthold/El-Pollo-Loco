@@ -1,0 +1,281 @@
+@font-face {
+    font-family: 'zabars';
+    src: url('fonts/zabars.ttf') format('truetype');
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'zabars', Arial, Helvetica, sans-serif;
+    background-image: url('img/desert-background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#start-container {
+    position: relative;
+}
+
+
+#game-container {
+    position: relative;
+}
+
+canvas {
+    background-color: black;
+    display: block;
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    position: absolute;
+    top: 0;
+}
+
+/* Turn-screen when width is to small (min 575px) */
+
+#turn-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#turn-screen img {
+    height: 32px;
+}
+
+.turning-txt {
+    font-size: 36px;
+}
+
+/* Screen fo Key Controls */
+
+#key-screen {
+    position: absolute;
+    background-color: beige;
+    opacity: 0.95;
+    z-index: 5;
+    height: 480px;
+    width: 720px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#key-screen {
+    z-index: 100;
+}
+
+#key-screen span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-size: 40px;
+}
+
+
+#key-screen span img {
+    height: 80px;
+}
+
+#key-screen #close-icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#key-screen #close-icon:hover {
+    transform: scale(1.2);
+}
+
+.slash {
+    font-size: 70px;
+}
+
+.btn {
+    padding: 12px;
+    border-radius: 6px;
+    border: solid 1px black;
+    font-family: 'zabars';
+    font-size: 24px;
+    background-color: #F9E600;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: black;
+    min-width: 100px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#start-btns-div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#restart-button {
+    position: absolute;
+    top: 15%;
+    left: 40%;
+
+}
+
+/* Controls during the game */
+
+.control-btns-div {
+    position: absolute;
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+    gap: 25px;
+    right: 30px;
+    top: 20px;
+}
+
+.control-btns-div div img {
+    height: 30px;
+}
+
+.control-btns-div div img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#mute-button:hover {
+    cursor: pointer;
+}
+
+#mute-button, #control-info-btn, #pause-btn, #fullscreen {
+    z-index: 10; 
+}
+
+
+/* Mobilie Device Buttons */
+
+.mobile-btns-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 4%;
+    width: 100%;
+}
+
+.mobile-icons {
+    height: 35px;
+}
+
+.background-mobile-btns {
+    background-color: orange;
+    border-radius: 4px;
+    border: solid 2px black;
+}
+
+.mobile-left-right-div {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-left: 50px;
+}
+
+.mobile-jump-throw-div {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-right: 50px;
+}
+
+
+
+/* End Mobile Device Buttons */
+
+.center-horizontally {
+    text-align: center;
+}
+
+h1 {
+    font-size: 62px;
+}
+
+.d-none {
+    display: none;
+}
+
+
+@media only screen and (max-width: 720px) {
+
+    canvas,
+    #start-container,
+    #start-btns-div,
+    #key-screen {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+
+    canvas,
+    #start-container,
+    #start-btns-div,
+    #key-screen {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 1100px) {
+    h1 {
+        display: none;
+    }
+}
+
+@media (max-height: 500px) {
+    #start-btns-div {
+        align-items: flex-start;
+        height: auto;
+        padding-top: 35px;
+        justify-content: center;
+        gap: 80px;
+    }
+}
+
+
+@media (max-width: 575px) {
+    #turn-screen {
+        display: block;
+    }
+
+    #start-container,
+    #game-container {
+        display: none;
+    }
+}
+
+@media (min-width: 575px) {
+    #turn-screen {
+        display: none;
+    }
+}
+
+
+
+
+
+
